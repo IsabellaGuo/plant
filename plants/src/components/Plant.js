@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
+import { PlantsContext, UserContext } from '../contexts';
 
 // assets
 import PlantAvatar from '../assets/PlantAvatar.svg';
 
 function Plant(props) {
 
+    const { plants, setPlants } = useContext(PlantsContext);
+
+    let history = useHistory();
     const { plant } = props;
+
+    const deletePlant = (id) => {
+        axiosWithAuth().delete(`/api/plants/${id}`)
+            .then((res) => {
+                // console.log(res);
+                axiosWithAuth().get(`/api/plants`)
+                    .then((res) => {
+                        // console.log(res);
+                        setPlants(res.data);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
 
     return (
         <Card key={plant.id}>
@@ -17,7 +41,10 @@ function Plant(props) {
                 <p>Water Times per Day: {plant.h2oFrequency}</p>
                 <div className="plant-controls">
                     <button>Edit Plant</button>
-                    <button className="delete">Delete Plant</button>
+                    <button className="delete" onClick={() => {
+                        deletePlant(plant.id);
+                        history.push(`/plants`);
+                    }}>Delete Plant</button>
                 </div>
             </div>
 

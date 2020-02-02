@@ -6,5 +6,5 @@ export const axiosWithAuth = () => {
         headers: {
             Authorization: localStorage.getItem('token')
         }
-    })
-}
+    });
+};

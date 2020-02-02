@@ -1,6 +1,3 @@
-
-
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const CORS = require("cors");
@@ -47,7 +44,7 @@ let plants = [
         species: 'species',
         h2oFrequency: 1,
         image: ''
-    },
+    }
 ];
 
 let nextId = 6;
@@ -82,13 +79,16 @@ app.get("/api/plants", authenticator, (req, res) => {
 });
 
 app.post("/api/plants", authenticator, (req, res) => {
-    if (req.body.color !== undefined && req.body.code !== undefined) {
+    if (req.body.nickname !== undefined && req.body.species !== undefined) {
         const newplant = req.body;
         newplant.id = nextId;
-        plants.push(newplants);
+        plants.push(newplant);
     }
+    // const newplant = { id: getNextId(), ...req.body };
     nextId = nextId + 1;
+    // plants = [...plants, newplant];
     res.status(201).json(plants);
+    // res.send(plants);
 });
 
 app.put("/api/plants/:id", authenticator, (req, res) => {

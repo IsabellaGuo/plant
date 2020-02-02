@@ -165,6 +165,7 @@ const Container = styled.div`
                     margin-top: 5rem;
                     border-top: 1px dotted #444444;
                     border-left: none;
+                    width: 100%;
                 }
             }
 
