@@ -14,6 +14,8 @@ function Header(props) {
                 {localStorage.getItem('token') &&
                     <Link to="/plants">Plants</Link>}
                 {localStorage.getItem('token') &&
+                    <Link to="/create">Create</Link>}
+                {localStorage.getItem('token') &&
                     <span className="user-cp" onClick={() => {
                         localStorage.clear();
                         window.location.reload();
@@ -81,6 +83,10 @@ const Container = styled.header`
 
         @media (max-width: 815px) {
             font-size: 1.6rem;
+        }
+
+        @media (max-width: 650px) {
+            font-size: 1.4rem;
         }
     }
 `;
