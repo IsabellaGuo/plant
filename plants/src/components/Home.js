@@ -7,6 +7,20 @@ import CTA from '../assets/CTA.svg';
 function Home(props) {
     return (
         <Container>
+            <div className="cta">
+                <div className="cta-img">
+                    <img src={CTA} alt="Plant in Hand" />
+                </div>
+                <div className="cta-message">
+                    <h4>Take Care of your Plants.</h4>
+                    <p>Watering doesn't need to be a hassle.</p>
+                    <div className="btns">
+                        <button className="register">Register</button>
+                        <button onClick={() => props.history.push(`/login`)}>Login</button>
+                    </div>
+                </div>
+            </div>
+
             <div className="cols">
                 <div className="col">
                     <h3>Never Forget To Water</h3>
@@ -19,20 +33,6 @@ function Home(props) {
                 <div className="col">
                     <h3>Learn About Plants</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                </div>
-            </div>
-
-            <div className="cta">
-                <div className="cta-img">
-                    <img src={CTA} alt="Plant in Hand" />
-                </div>
-                <div className="cta-message">
-                    <h4>Take Care of your Plants.</h4>
-                    <p>Watering doesn't need to be a hassle.</p>
-                    <div className="btns">
-                        <button className="register">Register</button>
-                        <button onClick={() => props.history.push(`/login`)}>Login</button>
-                    </div>
                 </div>
             </div>
         </Container>
@@ -48,7 +48,7 @@ const Container = styled.div`
 
     .cta {
         padding: 0 5rem;
-        margin-top: 10%;
+        margin-bottom: 10%;
         width: 100%;
         display: flex;
         justify-content: center;
