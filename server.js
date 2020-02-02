@@ -15,14 +15,14 @@ let plants = [
         nickname: 'Amaryllis',
         species: 'species',
         h2oFrequency: 1,
-        image: 'https://images.unsplash.com/photo-1517191434949-5e90cd67d2b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80'
+        image: 'https://images.unsplash.com/photo-1555401328-659c8e900a28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
     },
     {
         id: 2,
         nickname: 'African Violet',
         species: 'species',
         h2oFrequency: 1,
-        image: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1009&q=80'
+        image: 'https://images.unsplash.com/photo-1539176170444-67d6c8f356d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80'
     },
     {
         id: 3,
@@ -94,7 +94,7 @@ app.post("/api/plants", authenticator, (req, res) => {
 app.put("/api/plants/:id", authenticator, (req, res) => {
     if (!req.params.id)
         res.status(400).send("Your request is missing the plant id");
-    if (req.body.id === undefined || !req.body.color || !req.body.code) {
+    if (req.body.id === undefined || !req.body.nickname || !req.body.species) {
         res
             .status(422)
             .send("Make sure your request body has all the fields it needs");
@@ -103,7 +103,7 @@ app.put("/api/plants/:id", authenticator, (req, res) => {
         if (`${plant.id}` === req.params.id) {
             return req.body;
         }
-        return color;
+        return plant;
     });
     res.status(200).send(req.body);
 });

@@ -9,6 +9,7 @@ import { PlantsContext, UserContext } from './contexts';
 // components
 import Login from './components/Login';
 import Plants from './components/Plants';
+import Edit from './components/Edit';
 import CreatePlant from './components/CreatePlant';
 import Home from './components/Home';
 import Header from './components/visual/Header';
@@ -16,14 +17,19 @@ import Header from './components/visual/Header';
 function App() {
 
   const [plants, setPlants] = useState([]);
+  // const [toEdit, setToEdit] = useState({
+  //   nickname: '',
+  //   species: '',
+  //   h2oFrequency: '',
+  //   image: ''
+  // });
   const [user, setUser] = useState({
     username: '',
     password: '',
     phone: '',
     id: '',
     token: '',
-    plants: [],
-
+    plants: []
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +41,8 @@ function App() {
           <div className="main-content">
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
-            <PrivateRoute path="/plants" component={Plants} />
+            <PrivateRoute exact path="/plants" component={Plants} />
+            <PrivateRoute path="/plants/:id" component={Edit} />
             <PrivateRoute path="/create" component={CreatePlant} />
           </div>
         </UserContext.Provider>

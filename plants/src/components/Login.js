@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Loader from 'react-loader-spinner';
 import { useHistory } from 'react-router-dom';
 
 // contexts
@@ -12,7 +11,7 @@ function Login(props) {
     let history = useHistory();
 
     // state for our user
-    const { user, setUser, isLoading, setIsLoading, isLogged, setIsLogged } = useContext(UserContext);
+    const { user, setUser, setIsLoading } = useContext(UserContext);
 
     // extra error state for login
     const [error, setError] = useState({
@@ -76,17 +75,6 @@ function Login(props) {
                 />
                 <button type="submit">Login</button>
                 <span>Forgot Password</span>
-
-                {/* need to revisit this for displaying loading sign on login */}
-                {/* {isLoading && <Loader
-                    type="ThreeDots"
-                    color="#63bf7d"
-                    height={50}
-                    width={50}
-                    timeout={1500}
-                />} */}
-
-
             </form>
         </FormContainer>
     )

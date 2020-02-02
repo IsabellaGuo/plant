@@ -1,20 +1,16 @@
 import React, { useContext, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import styled from 'styled-components';
 
 // contexts
 import { PlantsContext } from '../contexts';
-import { UserContext } from '../contexts';
 
 // components
 import Plant from './Plant';
 
 function Plants(props) {
 
-    let history = useHistory();
     const { plants, setPlants } = useContext(PlantsContext);
-    const { user, setUser, isLoading, setIsLoading } = useContext(UserContext);
 
     useEffect(() => {
         axiosWithAuth().get(`/api/plants`)
@@ -25,7 +21,7 @@ function Plants(props) {
             .catch((err) => {
                 console.log(err);
             })
-    }, []);
+    }, [setPlants]);
 
     return (
         <Container>
@@ -43,6 +39,7 @@ function Plants(props) {
 }
 
 const Container = styled.div`
+    width: 100%;
     color: #444444;
 
     h3 {
@@ -54,8 +51,13 @@ const Container = styled.div`
     }
 
     p.welcome {
-        margin: 1rem 0;
+        margin: 3rem 0;
+        padding: 1rem;
         font-size: 1.8rem;
+    }
+
+    img {
+        width: 100%;
     }
 `;
 

@@ -40,6 +40,12 @@ const Container = styled.header`
         margin-right: 15%;
         letter-spacing: 0.1rem;
 
+        @media (max-width: 660px) {
+            width: 100%;
+            justify-content: center;
+            margin-right: 0;
+        }
+
         a {
             color: #444444;
             text-decoration: none;
@@ -82,11 +88,15 @@ const Container = styled.header`
         width: 25%;
 
         @media (max-width: 815px) {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
 
-        @media (max-width: 650px) {
-            font-size: 1.4rem;
+        @media (max-width: 735px) {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 660px) {
+            display: none;
         }
     }
 `;

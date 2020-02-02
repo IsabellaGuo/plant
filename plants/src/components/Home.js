@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // assets
 import CTA from '../assets/CTA.svg';
@@ -55,12 +54,21 @@ const Container = styled.div`
         justify-content: center;
         align-items: center;
 
+        @media (max-width: 1120px) {
+            flex-direction: column;
+        }
+
         .cta-message {
             width: 35%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+
+            @media (max-width: 1120px) {
+                width: 100%;
+                margin-top: 5rem;
+            }
 
             h4 {
                 font-size: 5rem;
@@ -84,6 +92,11 @@ const Container = styled.div`
                 flex-direction: row;
                 justify-content: space-between;
 
+                @media (max-width: 1333px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
                 button {
                     width: 15rem;
                     height: 5rem;
@@ -92,6 +105,11 @@ const Container = styled.div`
                     font-size: 1.6rem;
                     font-weight: 700;
                     transition: all 300ms;
+
+                    @media (max-width: 1333px) {
+                        width: 20rem;
+                        margin: 1rem 0;
+                    }
 
                     &:hover {
                         transition: opacity 300ms;
@@ -111,6 +129,10 @@ const Container = styled.div`
             justify-content: flex-start;
             align-items: center;
             width: 65%;
+
+            @media (max-width: 1120px) {
+                width: 100%;
+            }
 
             img {
                 width: 80%;

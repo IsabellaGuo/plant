@@ -1,18 +1,17 @@
 import React, { useContext, useState } from 'react';
-import styled from 'styled-components';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
-import { useHistory } from 'react-router-dom';
-
-// contexts
 import { PlantsContext } from '../contexts';
+import styled from 'styled-components';
+import { useHistory, useParams } from 'react-router-dom';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-function CreatePlant(props) {
+function Edit(props) {
 
     let history = useHistory();
+    const { id } = useParams();
     const { setPlants } = useContext(PlantsContext);
 
-    // new plant state
-    const [newPlant, setNewPlant] = useState({
+    const [toEdit, setToEdit] = useState({
+        id: Number(id),
         nickname: '',
         species: '',
         h2oFrequency: '',
@@ -20,18 +19,24 @@ function CreatePlant(props) {
     });
 
     const handleChange = (e) => {
-        setNewPlant({
-            ...newPlant,
+        setToEdit({
+            ...toEdit,
             [e.target.name]: e.target.value
         });
     }
 
-    const createPlant = (newPlant) => {
-        axiosWithAuth().post(`/api/plants`, newPlant)
+    const editPlant = (plant) => {
+        axiosWithAuth().put(`/api/plants/${plant.id}`, toEdit)
             .then((res) => {
-                console.log(res);
-                setPlants(res.data);
-                history.push(`/plants`);
+                axiosWithAuth().get(`/api/plants`)
+                    .then((res) => {
+                        setPlants(res.data);
+                        // console.log(res);
+                        history.push(`/plants`);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
             })
             .catch((err) => {
                 console.log(err);
@@ -42,52 +47,47 @@ function CreatePlant(props) {
         <Container>
             <form onSubmit={(e) => {
                 e.preventDefault();
-                createPlant(newPlant);
-                // console.log(newPlant);
+                editPlant(toEdit);
             }}>
                 <input
                     type="text"
                     name="nickname"
-                    placeholder="Nickname"
-                    value={newPlant.nickname}
+                    placeholder="New Plant Nickname"
+                    value={toEdit.nickname}
                     onChange={handleChange}
                     autoComplete="off"
                 />
                 <input
                     type="text"
                     name="species"
-                    placeholder="Species"
-                    value={newPlant.species}
+                    placeholder="New Species Name"
+                    value={toEdit.species}
                     onChange={handleChange}
                     autoComplete="off"
                 />
                 <input
-                    type="text"
+                    type="number"
                     name="h2oFrequency"
-                    placeholder="Water how many times a day?"
-                    value={newPlant.h2oFrequency}
+                    placeholder="Water how many times per day?"
+                    value={toEdit.h2oFrequency}
                     onChange={handleChange}
                     autoComplete="off"
                 />
                 <input
                     type="text"
                     name="image"
-                    placeholder="Enter image URL"
-                    value={newPlant.image}
+                    placeholder="New image URL"
+                    value={toEdit.image}
                     onChange={handleChange}
                     autoComplete="off"
                 />
-                <button type="submit">Create Plant</button>
+                <button type="submit">Finish Editing</button>
             </form>
         </Container>
     )
 }
 
 const Container = styled.div`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
     form {
         display: flex;
         flex-direction: column;
@@ -131,4 +131,4 @@ const Container = styled.div`
     }
 `;
 
-export default CreatePlant;
+export default Edit;
