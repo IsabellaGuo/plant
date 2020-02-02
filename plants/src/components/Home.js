@@ -7,10 +7,15 @@ import CTA from '../assets/CTA.svg';
 function Home(props) {
     return (
         <Container>
+            {/* Call to Action */}
             <div className="cta">
+
+                {/* Call to Action image */}
                 <div className="cta-img">
                     <img src={CTA} alt="Plant in Hand" />
                 </div>
+
+                {/* Call to Action message */}
                 <div className="cta-message">
                     <h4>Take Care of your Plants.</h4>
                     <p>Watering doesn't need to be a hassle.</p>
@@ -19,21 +24,27 @@ function Home(props) {
                         <button onClick={() => props.history.push(`/login`)}>Login</button>
                     </div>
                 </div>
+
             </div>
 
+            {/* 3 column layout for information */}
             <div className="cols">
+
                 <div className="col">
                     <h3>Never Forget To Water</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
+
                 <div className="col">
                     <h3>Keep Your Plants Healthy</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
+
                 <div className="col">
                     <h3>Learn About Plants</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
+
             </div>
         </Container>
     )
@@ -46,6 +57,7 @@ const Container = styled.div`
     align-items: center;
     color: #444444;
 
+    /* Call to Action section styling */
     .cta {
         padding: 0 5rem;
         margin-bottom: 10%;
@@ -58,6 +70,7 @@ const Container = styled.div`
             flex-direction: column;
         }
 
+        /* Call to Action message styling */
         .cta-message {
             width: 35%;
             display: flex;
@@ -85,6 +98,7 @@ const Container = styled.div`
                 text-align: center;
             }
 
+            /* Call to Action button styling */
             .btns {
                 margin-top: 5rem;
                 width: 100%;
@@ -124,6 +138,7 @@ const Container = styled.div`
             }
         }
 
+        /* Call to Action image styling */
         .cta-img {
             display: flex;
             justify-content: flex-start;
@@ -141,12 +156,15 @@ const Container = styled.div`
         }
     }
 
+
+    /* Three column layout for information styling */
     .cols {
         width: 100%;
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
 
+        /* Individual column styling */
         .col {
             width: 30%;
 

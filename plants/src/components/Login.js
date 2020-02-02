@@ -49,10 +49,14 @@ function Login(props) {
 
     return (
         <FormContainer>
+
             <div className="login-message">
                 <p>Please login to manage and view your plants.</p>
             </div>
+
+            {/* incorrect login error message */}
             {error.status && <p className="incorrect-login">{error.message}</p>}
+
             <form onSubmit={(e) => {
                 e.preventDefault();
                 log(user);
@@ -74,8 +78,12 @@ function Login(props) {
                     autoComplete="off"
                 />
                 <button type="submit">Login</button>
-                <span>Forgot Password</span>
+                <div className="extra-options">
+                    <span>Register</span>
+                    <span>Forgot Password</span>
+                </div>
             </form>
+
         </FormContainer>
     )
 }
@@ -154,6 +162,12 @@ const FormContainer = styled.div`
             cursor: pointer;
             background: #afdeb4;
         }
+    }
+
+    .extra-options {
+        width: 15%;
+        display: flex;
+        justify-content: space-evenly;
     }
 
 `;

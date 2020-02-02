@@ -7,8 +7,11 @@ function Header(props) {
         <Container>
             <h1>Water My Plants.</h1>
 
+            {/* navigation menu / user control panel with some conditional rendering. will need to change with backend auth probably */}
             <nav className="user-cp">
                 <Link to="/">Home</Link>
+                {!localStorage.getItem('token') &&
+                    <Link to="/login">Register</Link>}
                 {!localStorage.getItem('token') &&
                     <Link to="/login">Login</Link>}
                 {localStorage.getItem('token') &&
@@ -33,6 +36,7 @@ const Container = styled.header`
     align-items: center;
     justify-content: space-evenly;
 
+    /* navigation / user cp styling */
     nav.user-cp {
         display: flex;
         justify-content: flex-end;
@@ -70,6 +74,7 @@ const Container = styled.header`
         }
     }
 
+    /* more user control panel styling */
     .user-cp {
         span {
             color: #444444;
