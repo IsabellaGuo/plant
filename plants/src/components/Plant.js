@@ -43,6 +43,7 @@ function Plant(props) {
                 <p>Nickname: {plant.nickname}</p>
                 <p>Species: {plant.species}</p>
                 <p>Water Times per Day: {plant.h2oFrequency}</p>
+                <p>Created: {plant.created}</p>
                 <div className="plant-controls">
                     <button onClick={() => editPlant(plant.id)}>Edit Plant</button>
                     <button className="delete" onClick={() => {

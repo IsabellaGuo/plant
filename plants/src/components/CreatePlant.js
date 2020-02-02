@@ -16,7 +16,8 @@ function CreatePlant(props) {
         nickname: '',
         species: '',
         h2oFrequency: '',
-        image: ''
+        image: '',
+        created: Date.now()
     });
 
     const handleChange = (e) => {

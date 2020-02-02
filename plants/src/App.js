@@ -17,12 +17,6 @@ import Header from './components/visual/Header';
 function App() {
 
   const [plants, setPlants] = useState([]);
-  // const [toEdit, setToEdit] = useState({
-  //   nickname: '',
-  //   species: '',
-  //   h2oFrequency: '',
-  //   image: ''
-  // });
   const [user, setUser] = useState({
     username: '',
     password: '',

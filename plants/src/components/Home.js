@@ -10,15 +10,15 @@ function Home(props) {
             <div className="cols">
                 <div className="col">
                     <h3>Never Forget To Water</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. In suscipit nulla felis, pretium malesuada diam pretium eu. Cras non luctus mauris.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
                 <div className="col">
                     <h3>Keep Your Plants Healthy</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. In suscipit nulla felis, pretium malesuada diam pretium eu. Cras non luctus mauris.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
                 <div className="col">
                     <h3>Learn About Plants</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. In suscipit nulla felis, pretium malesuada diam pretium eu. Cras non luctus mauris.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat libero vitae imperdiet mattis. Integer sagittis viverra magna non varius. In tincidunt lorem consectetur justo iaculis blandit at ut erat. Vivamus diam tellus, tincidunt eu maximus et, placerat at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor faucibus ligula, nec aliquam tortor malesuada ut. Aenean egestas ipsum eu tortor tristique vulputate. Aenean dictum massa leo, sed lacinia lacus tincidunt finibus. Nullam cursus in mauris vel tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                 </div>
             </div>
 
@@ -98,7 +98,7 @@ const Container = styled.div`
                 }
 
                 button {
-                    width: 15rem;
+                    width: 45%;
                     height: 5rem;
                     border: none;
                     border-radius: 0.3rem;

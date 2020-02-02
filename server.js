@@ -15,35 +15,40 @@ let plants = [
         nickname: 'Amaryllis',
         species: 'species',
         h2oFrequency: 1,
-        image: 'https://images.unsplash.com/photo-1555401328-659c8e900a28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
+        image: 'https://images.unsplash.com/photo-1555401328-659c8e900a28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+        created: ''
     },
     {
         id: 2,
         nickname: 'African Violet',
         species: 'species',
         h2oFrequency: 1,
-        image: 'https://images.unsplash.com/photo-1539176170444-67d6c8f356d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80'
+        image: 'https://images.unsplash.com/photo-1539176170444-67d6c8f356d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80',
+        created: ''
     },
     {
         id: 3,
         nickname: 'Angel Wing Begonia',
         species: 'species',
         h2oFrequency: 1,
-        image: ''
+        image: '',
+        created: ''
     },
     {
         id: 4,
         nickname: 'Barberton Daisy',
         species: 'species',
         h2oFrequency: 1,
-        image: ''
+        image: '',
+        created: ''
     },
     {
         id: 5,
         nickname: 'Beach Spider Lily',
         species: 'species',
         h2oFrequency: 1,
-        image: ''
+        image: '',
+        created: ''
     }
 ];
 

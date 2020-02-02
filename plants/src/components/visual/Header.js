@@ -61,6 +61,12 @@ const Container = styled.header`
             &:last-child {
                 padding-right: 0;
             }
+
+            @media (max-width: 660px) {
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
         }
     }
 
