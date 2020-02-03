@@ -47,6 +47,11 @@ function Login(props) {
                     status: true,
                     message: err.response.data.error
                 });
+                setUser({
+                    ...user,
+                    username: '',
+                    password: ''
+                });
             })
     }
 
@@ -63,6 +68,10 @@ function Login(props) {
             <form onSubmit={(e) => {
                 e.preventDefault();
                 log(user);
+                setError({
+                    status: false,
+                    message: ''
+                });
             }}>
                 <input
                     type="text"
@@ -76,7 +85,7 @@ function Login(props) {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    value={user.Password}
+                    value={user.password}
                     onChange={handleChange}
                     autoComplete="off"
                 />

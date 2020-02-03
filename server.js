@@ -16,7 +16,7 @@ let plants = [
         species: 'species',
         h2oFrequency: 1,
         image: 'https://images.unsplash.com/photo-1555401328-659c8e900a28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-        created: ''
+        created: '1080707835115'
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ let plants = [
         species: 'species',
         h2oFrequency: 1,
         image: 'https://images.unsplash.com/photo-1539176170444-67d6c8f356d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80',
-        created: ''
+        created: '1480707835115'
     },
     {
         id: 3,
@@ -32,7 +32,7 @@ let plants = [
         species: 'species',
         h2oFrequency: 1,
         image: '',
-        created: ''
+        created: '1380707835115'
     },
     {
         id: 4,
@@ -40,7 +40,7 @@ let plants = [
         species: 'species',
         h2oFrequency: 1,
         image: '',
-        created: ''
+        created: '1180707835115'
     },
     {
         id: 5,
@@ -48,7 +48,7 @@ let plants = [
         species: 'species',
         h2oFrequency: 1,
         image: '',
-        created: ''
+        created: '1280707835115'
     }
 ];
 

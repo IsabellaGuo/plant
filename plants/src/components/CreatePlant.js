@@ -71,7 +71,7 @@ function CreatePlant(props) {
                     autoComplete="off"
                 />
                 <input
-                    type="text"
+                    type="url"
                     name="image"
                     placeholder="Enter image URL"
                     value={newPlant.image}

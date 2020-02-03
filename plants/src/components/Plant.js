@@ -6,6 +6,7 @@ import { PlantsContext } from '../contexts';
 
 // assets
 import PlantAvatar from '../assets/PlantAvatar.svg';
+import Water from '../assets/Water.svg';
 
 function Plant(props) {
 
@@ -45,6 +46,10 @@ function Plant(props) {
                 <p>Water Times per Day: {plant.h2oFrequency}</p>
                 <p>Created: {plant.created}</p>
                 <div className="plant-controls">
+                    <div className="water-btn">
+                        <img src={Water} alt="Water Your Plant" />
+                        <span>Hydrate</span>
+                    </div>
                     <button onClick={() => editPlant(plant.id)}>Edit Plant</button>
                     <button className="delete" onClick={() => {
                         deletePlant(plant.id);
@@ -81,10 +86,11 @@ const Card = styled.div`
             }
     
             .plant-controls {
-                width: 25rem;
+                width: 45rem;
                 margin-top: 5rem;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-evenly;
+                // border: 1px solid red;
                 
                 button {
                     background: #d1ffd6;
@@ -106,6 +112,36 @@ const Card = styled.div`
     
                 button.delete {
                     background: #e3443d;
+                }
+
+                .water-btn {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    background: #1a1a1a;
+                    width: 30%;
+                    font-size: 1.6rem;
+                    letter-spacing: 0.1rem;
+                    color: #48B3EF;
+                    border-radius: 0.3rem;
+                    transition: all 300ms;
+
+                    &:hover {
+                        transition: opacity 300ms;
+                        opacity: 0.8;
+                        cursor: pointer;
+                    }
+
+                    img {
+                        height: 2rem;
+                        width: 15%;
+                        // border: 1px solid purple;
+                    }
+
+                    span {
+                        width: 65%;
+                        // border: 1px solid red;
+                    }
                 }
             }
         }
