@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, useHistory } from 'react-router-dom';
+import { Route, useHistory, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import PrivateRoute from './components/PrivateRoute';
 
@@ -32,6 +32,10 @@ function App() {
     plants: []
   });
 
+  const pushToPlants = () => {
+    history.push(`/plants`);
+  }
+
   // loading state for loading messages - needs work
   const [isLoading, setIsLoading] = useState(false);
 
@@ -44,8 +48,12 @@ function App() {
             {/* Unauthenticated routes */}
             <Route exact path="/" component={Home} />
             {!localStorage.getItem('token') && <Route path="/login" component={Login} />}
-            {localStorage.getItem('token') && <Route path="/login" render={() => history.push(`/plants`)} />}
-            {localStorage.getItem('token') && <Route path="/register" render={() => history.push(`/plants`)} />}
+
+            {/* Was trying to redirect authenticated users to plants dashboard if they navigate to /login or /register while logged in */}
+            {localStorage.getItem('token') && <Route path="/login" render={() => <Redirect to="/plants" />} />}
+            {localStorage.getItem('token') && <Route path="/register" render={() => <Redirect to="/plants" />} />}
+
+
             <Route path="/register" component={Register} />
 
             {/* Private Routes for authenticated users */}

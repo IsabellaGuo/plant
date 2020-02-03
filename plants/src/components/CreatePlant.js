@@ -6,6 +6,9 @@ import { useHistory } from 'react-router-dom';
 // contexts
 import { PlantsContext } from '../contexts';
 
+// assets
+import Start from '../assets/Start.svg';
+
 function CreatePlant(props) {
 
     let history = useHistory();
@@ -41,6 +44,21 @@ function CreatePlant(props) {
 
     return (
         <Container>
+            <div className="start">
+                <div className="start-img">
+                    <img src={Start} alt="Start creating a plant" />
+                </div>
+                <div className="start-info">
+                    <h3>Create Your Plant</h3>
+                    <p>Creating a plant is easy.</p>
+                    <ol>
+                        <li>Give it a nickname</li>
+                        <li>Identify its species</li>
+                        <li>Set how many times it needs to be watered per day</li>
+                        <li>Enter an image URL for displaying your plant.</li>
+                    </ol>
+                </div>
+            </div>
             <form onSubmit={(e) => {
                 e.preventDefault();
                 createPlant(newPlant);
@@ -128,6 +146,73 @@ const Container = styled.div`
                 cursor: pointer;
                 background: #afdeb4;
             }
+        }
+    }
+
+    .start {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 5%;
+
+        @media (max-width: 1050px) {
+            flex-direction: column;
+        }
+
+        .start-img {
+            width: 40%;
+
+            @media (max-width: 1050px) {
+                width: 100%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .start-info {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @media (max-width: 1050px) {
+                width: 100%;
+                margin-top: 10%;
+            }
+
+            h3 {
+                font-size: 3rem;
+                font-weight: 700;
+                letter-spacing: 0.1rem;
+                color: #444444;
+            }
+
+            p {
+                margin: 1rem 0;
+                font-size: 2rem;
+                font-weight: 300;
+                letter-spacing: 0.1rem;
+                color: #444444;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px dotted #444444;
+            }
+
+            ol {
+                color: #444444;
+                font-size: 1.6rem;
+                letter-spacing: 0.1rem;
+                font-weight: 300;
+                margin-top: 1rem;
+
+                li {
+                    margin: 2rem 0;
+                    border-bottom: 1px dashed #444444;
+                    padding-bottom: 1.5rem;
+                }
+            }
+
         }
     }
 `;

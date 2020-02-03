@@ -48,7 +48,7 @@ function Plant(props) {
                 <div className="plant-controls">
                     <div className="water-btn">
                         <img src={Water} alt="Water Your Plant" />
-                        <span>Hydrate</span>
+                        <span>Water</span>
                     </div>
                     <button onClick={() => editPlant(plant.id)}>Edit Plant</button>
                     <button className="delete" onClick={() => {
@@ -119,7 +119,7 @@ const Card = styled.div`
                     justify-content: space-evenly;
                     align-items: center;
                     background: #1a1a1a;
-                    width: 30%;
+                    width: 25%;
                     font-size: 1.6rem;
                     letter-spacing: 0.1rem;
                     color: #48B3EF;
@@ -139,7 +139,9 @@ const Card = styled.div`
                     }
 
                     span {
-                        width: 65%;
+                        display: flex;
+                        justify-content: flex-start;
+                        width: 60%;
                         // border: 1px solid red;
                     }
                 }
