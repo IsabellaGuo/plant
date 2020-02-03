@@ -165,7 +165,7 @@ const FormContainer = styled.div`
     }
 
     .extra-options {
-        width: 15%;
+        width: 30%;
         display: flex;
         justify-content: space-evenly;
     }

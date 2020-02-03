@@ -8,6 +8,7 @@ import { PlantsContext, UserContext } from './contexts';
 
 // components
 import Login from './components/Login';
+import Register from './components/Register';
 import Plants from './components/Plants';
 import Edit from './components/Edit';
 import CreatePlant from './components/CreatePlant';
@@ -44,6 +45,8 @@ function App() {
             <Route exact path="/" component={Home} />
             {!localStorage.getItem('token') && <Route path="/login" component={Login} />}
             {localStorage.getItem('token') && <Route path="/login" render={() => history.push(`/plants`)} />}
+            {localStorage.getItem('token') && <Route path="/register" render={() => history.push(`/plants`)} />}
+            <Route path="/register" component={Register} />
 
             {/* Private Routes for authenticated users */}
             <PrivateRoute exact path="/plants" component={Plants} />

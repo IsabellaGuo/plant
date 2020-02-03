@@ -11,7 +11,7 @@ function Header(props) {
             <nav className="user-cp">
                 <Link to="/">Home</Link>
                 {!localStorage.getItem('token') &&
-                    <Link to="/login">Register</Link>}
+                    <Link to="/register">Register</Link>}
                 {!localStorage.getItem('token') &&
                     <Link to="/login">Login</Link>}
                 {localStorage.getItem('token') &&
