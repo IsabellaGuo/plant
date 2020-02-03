@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 function Register(props) {
+
+    let history = useHistory();
 
     // needs to be wired up to backend endpoint for registering users
 
@@ -28,6 +31,7 @@ function Register(props) {
                     placeholder="Username"
                     value={newUser.username}
                     onChange={handleChange}
+                    autoComplete="off"
                 />
                 <input
                     type="password"
@@ -35,6 +39,7 @@ function Register(props) {
                     placeholder="Password"
                     value={newUser.password}
                     onChange={handleChange}
+                    autoComplete="off"
                 />
                 <input
                     type="text"
@@ -42,8 +47,12 @@ function Register(props) {
                     placeholder="Phone #"
                     value={newUser.phone}
                     onChange={handleChange}
+                    autoComplete="off"
                 />
                 <button type="submit">Register</button>
+                <div className="extra-options">
+                    <span onClick={() => history.push(`/login`)}>Already have an account? Login</span>
+                </div>
             </form>
         </Container>
     )
@@ -100,6 +109,21 @@ const Container = styled.div`
                 transition: background 100ms;
                 cursor: pointer;
                 background: #afdeb4;
+            }
+        }
+
+        .extra-options {
+            margin: 1rem 0;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+
+            span {
+                color: #fafafa;
+                
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

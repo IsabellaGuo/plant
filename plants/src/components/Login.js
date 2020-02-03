@@ -79,7 +79,7 @@ function Login(props) {
                 />
                 <button type="submit">Login</button>
                 <div className="extra-options">
-                    <span>Register</span>
+                    <span onClick={() => history.push(`/register`)}>Register</span>
                     <span>Forgot Password</span>
                 </div>
             </form>
@@ -103,6 +103,10 @@ const FormContainer = styled.div`
     span {
         margin-top: 0.5rem;
         font-size: 1.2rem;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .login-message {

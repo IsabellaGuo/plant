@@ -20,7 +20,7 @@ function Home(props) {
                     <h4>Take Care of your Plants.</h4>
                     <p>Watering doesn't need to be a hassle.</p>
                     <div className="btns">
-                        <button className="register">Register</button>
+                        <button className="register" onClick={() => props.history.push(`/register`)}>Register</button>
                         <button onClick={() => props.history.push(`/login`)}>Login</button>
                     </div>
                 </div>
