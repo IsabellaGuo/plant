@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useReducer } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -9,12 +9,32 @@ import { UserContext } from '../contexts';
 // assets
 import View from '../assets/View.svg';
 
+// want to refactor all state into using useReducer with context API
+// function loginReducer(state, action) {
+//     switch (action.type) {
+//         default:
+//             return state;
+//     }
+// }
+
+// want to refactor all state into using useReducer with context API
+// const initialState = {
+//     username: '',
+//     password: '',
+//     isLoading: '',
+//     isLoggedIn: '',
+//     error: ''
+// }
+
 function Login(props) {
 
     let history = useHistory();
 
     // state for our user
     const { user, setUser, setIsLoading } = useContext(UserContext);
+
+    // want to refactor all state into using useReducer with context API
+    // const [state, dispatch] = useReducer(loginReducer, initialState);
 
     // extra error state for login
     const [error, setError] = useState({
@@ -111,9 +131,11 @@ const FormContainer = styled.div`
     align-items: center;
 
     .svg-banner {
+        display: flex;
+        justify-content: center;
 
         img {
-            width: 100%;
+            width: 80%;
         }
     }
 
@@ -144,6 +166,14 @@ const FormContainer = styled.div`
             font-weight: 300;
             letter-spacing: 0.1rem;
             color: #444444;
+
+            @media (max-width: 451px) {
+                font-size: 1.4rem;                
+            }
+
+            @media (max-width: 403px) {
+                font-size: 1.2rem;                
+            }
         }
     }
 
@@ -154,6 +184,26 @@ const FormContainer = styled.div`
         align-items: center;
         width: 60%;
         margin-bottom: 5%;
+
+        @media (max-width: 1440px) {
+            width: 70%;
+        }
+
+        @media (max-width: 1245px) {
+            width: 80%;
+        }
+
+        @media (max-width: 1085px) {
+            width: 90%;
+        }
+        
+        @media (max-width: 965px) {
+            width: 100%;
+        }
+
+        @media (max-width: 850px) {
+            flex-direction: column;
+        }
     }
 
     input {

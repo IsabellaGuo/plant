@@ -89,6 +89,18 @@ const Container = styled.div`
                 letter-spacing: 0.1rem;
                 margin-bottom: 2rem;
                 text-align: center;
+
+                @media (max-width: 535px) {
+                    font-size: 3.5rem;
+                }
+
+                @media (max-width: 422px) {
+                    font-size: 3rem;
+                }
+
+                @media (max-width: 400px) {
+                    font-size: 2.7rem;
+                }
             }
 
             p {
@@ -96,6 +108,18 @@ const Container = styled.div`
                 font-weight: 300;
                 letter-spacing: 0.1rem;
                 text-align: center;
+
+                @media (max-width: 535px) {
+                    font-size: 2rem;
+                }
+
+                @media (max-width: 422px) {
+                    font-size: 1.8rem;
+                }
+
+                @media (max-width: 400px) {
+                    font-size: 1.6rem;
+                }
             }
 
             /* Call to Action button styling */

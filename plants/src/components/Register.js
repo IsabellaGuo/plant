@@ -74,6 +74,11 @@ const Container = styled.div`
         padding-bottom: 1rem;
         border-bottom: 1px dotted #444444;
         margin-bottom: 5%;
+        text-align: center;
+
+        @media (max-width: 400px) {
+            font-size: 2rem;
+        }
     }
 
     img {
