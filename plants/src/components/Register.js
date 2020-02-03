@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
+// assets
+import Watering from '../assets/Watering.svg';
+
 function Register(props) {
 
     let history = useHistory();
@@ -23,6 +26,9 @@ function Register(props) {
 
     return (
         <Container>
+            <div className="svg-banner">
+                <img src={Watering} alt="Woman watering plants" />
+            </div>
             <h3>Create a New Account</h3>
             <form>
                 <input
@@ -67,6 +73,17 @@ const Container = styled.div`
         letter-spacing: 0.1rem;
         padding-bottom: 1rem;
         border-bottom: 1px dotted #444444;
+        margin-bottom: 5%;
+    }
+
+    img {
+        margin-bottom: 10%;
+        height: 50rem;
+
+        @media (max-width: 900px) {
+            height: auto;
+            width: 100%;
+        }
     }
 
     form {
@@ -120,7 +137,7 @@ const Container = styled.div`
 
             span {
                 color: #fafafa;
-                
+
                 &:hover {
                     cursor: pointer;
                 }

@@ -6,6 +6,9 @@ import { useHistory } from 'react-router-dom';
 // contexts
 import { UserContext } from '../contexts';
 
+// assets
+import View from '../assets/View.svg';
+
 function Login(props) {
 
     let history = useHistory();
@@ -78,11 +81,15 @@ function Login(props) {
                     autoComplete="off"
                 />
                 <button type="submit">Login</button>
-                <div className="extra-options">
+                {/* <div className="extra-options">
                     <span onClick={() => history.push(`/register`)}>Register</span>
                     <span>Forgot Password</span>
-                </div>
+                </div> */}
             </form>
+
+            <div className="svg-banner">
+                <img src={View} alt="Woman looking at nature" />
+            </div>
 
         </FormContainer>
     )
@@ -93,6 +100,13 @@ const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .svg-banner {
+
+        img {
+            width: 100%;
+        }
+    }
 
     .incorrect-login {
         margin-top: 3rem;
@@ -127,9 +141,10 @@ const FormContainer = styled.div`
     form {
         padding: 2.5rem 0;
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        width: 100%;
+        width: 60%;
+        margin-bottom: 5%;
     }
 
     input {
